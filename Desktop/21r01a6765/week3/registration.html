@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0%;
+        }
+        .navigation{
+            background-color: aliceblue;
+            height:60;
+            width: 100vw;
+            position: fixed;
+            top: 0%;
+            padding: 10;
+            margin: 10;
+        }
+        
+            h2{
+                text-align: center;
+
+            }
+        
+        fieldset {
+            width: 500px;
+            background-color: rgba(177, 94, 52, 0.285);
+        }
+
+        table tr td {
+            padding-top: 6px;
+            padding-bottom: 6px;
+
+        }
+
+        body {
+            background-color: rgb(157, 144, 128);
+        }
+        footer{ 
+            text-align: center;
+            background-color: rgba(103, 95, 95, 0.243);
+            position: fixed;
+            bottom: 0%;
+            width: 100vw;
+        }
+    </style>
+    <script>
+        function validate() {
+            let fn1 = frm.lname.value;
+            for (let x in fn) {
+                let ch = fn1.charcodeat(x);
+                if (ch < 65 || chy > 90 && ch < 97 || ch > 122) {
+                    alert("Invalid lastname");
+                    return false;
+                }
+            }
+            let p1 = frm.phn.value;
+            if (p1 !== 10) {
+                alert("phone number should be 10 digits");
+                return false;
+            }
+            let reg = "@";
+            let mail = frm.mail.value;
+            if (reg.test(mail)) {
+                alert("invalid email")
+                return false;
+            }
+            let p = frm.pwd.value;
+            let p3 = p.length;
+            if (p < 8) {
+                alert("password should not exceed8 digit");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="navigation">
+            <h2>
+                Signup
+            </h2>
+        </div>
+    </div>
+    <center>
+        <form name="form" method="post" action="success.html" onsubmit="return validate()">
+            <h2> Registration</h2>
+            <fieldset>
+                <table>
+                    <tr>
+                        <td> FirstName:</td>
+                        <td> <input type="text" name="frame" value="" required /></td>
+                    </tr>
+
+                    <td> LastName:</td>
+                    <td> <input type="text" name="lname" value="" required /></td>
+                    </tr>
+                    <tr>
+                        <td> Phonenumber:</td>
+                        <td> <input type="number" name="phn" value="" required /></td>
+                    </tr>
+                    <tr>
+                        <td> Mailid:</td>
+                        <td> <input type="email" name="mail" value="" required /></td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td> Male<input type="radio" name=gender value="" required></td>
+                        <td> Female<input type="radio" name=gender value="" required></td>
+                    </tr>
+                    <tr>
+                    <td> DOB:</td>
+                    <td> <input type="date" name="value" value="" required /></td>
+                    </tr>
+                    <tr>
+                        <td> Username:</td>
+                        <td> <input type="text" name="uname" value="" required /></td>
+                    </tr>
+                    <tr>
+                        <td> password:</td>
+                        <td> <input type="password" name="pwd" value="" required /></td>
+                    </tr>
+                    <tr>
+                            <td>confirm password:</td>
+                            <td> <input type="password" name="pwd" value="" required /></td>
+                        </tr>
+                        <tr>
+                        <td> Age:</td>
+                        <td> <input type="number" name="age" value="" required /></td>
+                    </tr>
+                    <table>
+                        <input type="submit"value="Registration" name="submit" />
+                       
+
+                    </table>
+
+
+
+            </fieldset>
+            <p> copyright CMRIT_2024</p>
+        </form>
+        <footer>
+            <h3> mobile number:xxxxxxxx</h3>
+            <h3> contact us at 6309591664</h3>
+        </footer>
+        </form>
+    </center>
+</body>
